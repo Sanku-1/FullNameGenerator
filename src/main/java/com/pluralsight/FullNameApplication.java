@@ -16,7 +16,6 @@ public class FullNameApplication {
 
         boolean middleNameBoolean = false;
         String middleName = "";
-        String middleInitial = "";
         if (middleNameCheck.equalsIgnoreCase("yes") || middleNameCheck.equalsIgnoreCase("y")) {
             middleNameBoolean = true;
         } else {
@@ -27,11 +26,11 @@ public class FullNameApplication {
             System.out.println("Please enter your middle name:");
             middleName = nameScanner.nextLine();
             middleName = middleName.trim();
-            System.out.println("Do you prefer to abbreviate your full name? (yes/no):");
+            System.out.println("Do you prefer to abbreviate your middle name? (yes/no):");
             String fullMiddleCheck = nameScanner.nextLine();
             if (fullMiddleCheck.equalsIgnoreCase("yes") || fullMiddleCheck.equalsIgnoreCase("y")) {
-                middleInitial = middleName.charAt(0) + ".";
-                middleName = middleInitial;
+                middleName = middleName.charAt(0) + ".";
+
             }
         }
 

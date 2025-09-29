@@ -13,8 +13,10 @@ public class FullNameApplication {
         lastName = lastName.trim();
         System.out.println("Do you have a middle name? (yes/no):");
         String middleNameCheck = nameScanner.nextLine();
+
         boolean middleNameBoolean = false;
         String middleName = "";
+        String middleInitial = "";
         if (middleNameCheck.equalsIgnoreCase("yes") || middleNameCheck.equalsIgnoreCase("y")) {
             middleNameBoolean = true;
         } else {
@@ -24,10 +26,17 @@ public class FullNameApplication {
         if (middleNameBoolean == true) {
             System.out.println("Please enter your middle name:");
             middleName = nameScanner.nextLine();
+            middleName = middleName.trim();
+            System.out.println("Do you prefer to include your full middle name? (yes/no):");
+            String fullMiddleCheck = nameScanner.nextLine();
+            if (fullMiddleCheck.equalsIgnoreCase("no") || fullMiddleCheck.equalsIgnoreCase("n")) {
+                middleInitial = middleName.charAt(0) + ".";
+                middleName = middleInitial;
+            }
         }
-        middleName = middleName.trim();
 
-        System.out.println("Do you have a suffix? (yes/no)");
+
+        System.out.println("Do you have a suffix? (yes/no):");
         String suffixCheck = nameScanner.nextLine();
         boolean suffixBoolean = false;
         String suffixName = "";
@@ -46,6 +55,7 @@ public class FullNameApplication {
         suffixName = ", " + suffixName;
 
         String fullName = "";
+
 
         if (suffixBoolean && middleNameBoolean) {
             fullName = firstName + " " + middleName + " " + lastName + suffixName;

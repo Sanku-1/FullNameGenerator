@@ -56,7 +56,6 @@ public class FullNameApplication {
         } else {
             fullName = firstName + " " + lastName;
         }
-
         System.out.println("You full name is: "+ fullName);
         }
     }
